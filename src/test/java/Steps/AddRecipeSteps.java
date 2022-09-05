@@ -48,6 +48,7 @@ public class AddRecipeSteps {
         driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"" + arg0 + "\"]").click();
     }
 
+    // ciao da runner 
     @And("Tap on Favourite Button")
     public void tapOnFavouriteButton() {
         driver.findElementByAccessibilityId("Add to Favorites").click();
