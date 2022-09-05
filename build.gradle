@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation group: 'io.appium', name: 'java-client', version: '7.6.0'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.2.3'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
+
+}
+
+task runAllTest(type: Test, dependsOn: ['clean', 'build']) {
+    doLast {
+        String tags = getTags()
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = sourceSets.test.runtimeClasspath
+            args = ["-p", "pretty", "-p",
+                    "json:${reporting.baseDir}/cucumber/cucumber.json",
+                    "--glue", "Steps", "-t", tags,
+                    "${project.projectDir}/src/test/java/features"]
+        }
+    }
+}
+
+private String getTags() {
+    def tags = System.getProperty("tags")
+    if (tags != null)
+        return tags;
+    return "~wip"
+}
+
+test {
+    useJUnitPlatform()
+}
