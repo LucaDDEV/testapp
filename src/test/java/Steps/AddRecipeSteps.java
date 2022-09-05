@@ -42,6 +42,7 @@ public class AddRecipeSteps {
         driver.findElementByXPath("(//XCUIElementTypeButton[@name=\"BackButton\"])[2]").click();
     }
 
+    // Ciao.
     @And("Tap on recipe {string}")
     public void tapOnRecipe(String arg0) {
         driver.findElementByXPath("//XCUIElementTypeStaticText[@name=\"" + arg0 + "\"]").click();
