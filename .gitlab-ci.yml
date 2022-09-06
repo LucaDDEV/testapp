@@ -37,7 +37,7 @@ test:
   stage: test
   tags:
     - frutanew
-  script: ./gradlew clean build runAllTest
+  script: ./gradlew clean build runAllTest -Dtags=@search
   cache:
     key: "$CI_COMMIT_REF_NAME"
     policy: pull
