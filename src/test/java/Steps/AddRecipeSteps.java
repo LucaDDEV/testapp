@@ -56,8 +56,8 @@ public class AddRecipeSteps {
 
     @And("Go to Main menu")
     public void goToMainMenu() {
-        //driver.findElementByAccessibilityId("BackButton").click();
-        driver.findElementByXPath("(//XCUIElementTypeButton[@name=\"BackButton\"])[2]").click();
+        driver.findElementByAccessibilityId("BackButton").click();
+        //driver.findElementByXPath("(//XCUIElementTypeButton[@name=\"BackButton\"])[2]").click();
         driver.findElementByXPath("//XCUIElementTypeCell[@name=\"Favorites\"]/XCUIElementTypeOther[1]").click();
     }
 
