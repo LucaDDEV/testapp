@@ -37,7 +37,7 @@ test:
   stage: test
   tags:
     - frutanew
-  script: gradle check
+  script: ./gradlew clean build runAllTest
   cache:
     key: "$CI_COMMIT_REF_NAME"
     policy: pull
