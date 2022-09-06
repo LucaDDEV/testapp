@@ -1,5 +1,5 @@
 Feature: Favorite Section
-  
+  @search
   Scenario: Add Recipe Steps
   as a user when I add a recipe as a favorite,
   I should find it in the favorites section.
