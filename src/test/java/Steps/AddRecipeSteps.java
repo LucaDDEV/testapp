@@ -63,7 +63,7 @@ public class AddRecipeSteps {
 
     @Then("I should see {string} into favorite section")
     public void iShouldSeeIntoFavoriteSection(String arg0) {
-        driver.findElementByXPath("(//XCUIElementTypeStaticText[@name=\"jiji\"])[2]").click();
+        driver.findElementByXPath("(//XCUIElementTypeStaticText[@name=\"Kiwi Cutie\"])[2]").click();
         //Stop Recording
         String video = ((CanRecordScreen)driver).stopRecordingScreen();
         byte[] decodedVideo = Base64.getMimeDecoder().decode(video);
